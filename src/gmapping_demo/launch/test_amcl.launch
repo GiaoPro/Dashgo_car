@@ -1,0 +1,10 @@
+<launch>
+    <!-- strat rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gmapping_demo)/rvizs/amcl.rviz" />
+    <!-- load map server -->
+    <arg name="map_file" default="$(find gmapping_demo)/maps/test1.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    <!-- start amcl.launch -->
+    <include file ="$(find gmapping_demo)/launch/amcl_diff_param.launch"/>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+</launch>

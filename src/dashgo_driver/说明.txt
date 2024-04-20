@@ -1,0 +1,5 @@
+1.启动驱动
+roslaunch dashgo_driver driver.launch
+
+2.参数配置
+在config/my_dashgo_params.yaml中，配置串口名称等。

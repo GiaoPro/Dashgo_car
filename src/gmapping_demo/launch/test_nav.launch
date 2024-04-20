@@ -1,0 +1,11 @@
+<launch>
+    <!-- load map -->
+    <arg name="map_file" default="$(find gmapping_demo)/maps/test1.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    <!-- amcl -->
+    <include file ="$(find gmapping_demo)/launch/amcl_diff_param.launch"/>
+    <!-- move_base -->
+    <include file ="$(find gmapping_demo)/launch/move_base.launch"/>
+    <!-- rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gmapping_demo)/rvizs/amcl.rviz" />
+</launch>
